@@ -8,3 +8,16 @@
 
 import SwiftUI
 
+class Share: Identifiable, Codable {
+//    var id = UUID()
+    var name = "Incognito"
+    var email = ""
+    var isContacted = false
+}
+
+class Prospects: ObservableObject {
+    @Published var people: [Share]
+    init() {
+        self.people = []
+    }
+}

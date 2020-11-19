@@ -12,6 +12,7 @@ struct ProspectsView: View {
     enum FilterType {
         case none, contacted, uncontacted
     }
+    @EnvironmentObject var prospects: Prospects
     
     let filter: FilterType
     
@@ -28,8 +29,17 @@ struct ProspectsView: View {
     
     var body: some View {
         NavigationView{
-           Text("Hello, Prospects!")
-            .navigationBarTitle(title)
+            Text("People: \(prospects.people.count)")
+                .navigationBarTitle(title)
+                .navigationBarItems(trailing: Button("Save") {
+                    print("Save")
+          
+                let prospect = Share()
+                prospect.name = "Iurie Guzun"
+                prospect.email = "iurie@canada.com"
+                self.prospects.people.append(prospect)
+            })
+            
         }
        
     }
