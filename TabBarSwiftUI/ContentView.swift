@@ -11,21 +11,26 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            ProspectsView()
+            ProspectsView(filter:  .none)
             .tabItem {
                 Image(systemName: "person.3")
                 Text("Everybody")
-            ProspectsView()
+            }
+            ProspectsView(filter: .contacted)
             .tabItem {
-                Image(systemName: "person.3")
+                Image(systemName: "checkmark.circle")
                 Text("Contacted")
             }
-            ProspectsView()
+            ProspectsView(filter: .uncontacted)
             .tabItem {
-               Image(systemName: "questionMark.diamond")
+               Image(systemName: "questionmark.diamond")
                Text("Uncontacted")
            }
-          }
+          MyView()
+            .tabItem {
+               Image(systemName: "person.crop.square")
+               Text("Myself")
+            }
         }
     }
 }
