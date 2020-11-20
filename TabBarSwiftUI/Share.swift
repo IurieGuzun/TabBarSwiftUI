@@ -9,7 +9,7 @@
 import SwiftUI
 
 class Share: Identifiable, Codable {
-//    var id = UUID()
+    var id = UUID()
     var name = "Incognito"
     var email = ""
     var isContacted = false

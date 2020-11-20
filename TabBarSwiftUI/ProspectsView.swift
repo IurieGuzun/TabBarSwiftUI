@@ -33,11 +33,16 @@ struct ProspectsView: View {
                 .navigationBarTitle(title)
                 .navigationBarItems(trailing: Button("Save") {
                     print("Save")
+                  
           
                 let prospect = Share()
                 prospect.name = "Iurie Guzun"
                 prospect.email = "iurie@canada.com"
                 self.prospects.people.append(prospect)
+                print(self.title)
+                print(prospect.id)
+                print(prospect.name)
+                print(prospect.email)
             })
             
         }
